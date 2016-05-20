@@ -1,0 +1,23 @@
+{
+  "name": "(whatsapp)",
+  "version": "1.0.0",
+  "description": "Chat de whatsapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://PaoBeGon@github.com/PaoBeGon/watsapp-chat.git"
+  },
+  "author": "Paola Begazo Gonzales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaoBeGon/watsapp-chat/issues"
+  },
+  "homepage": "https://github.com/PaoBeGon/watsapp-chat#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6"
+  }
+}
