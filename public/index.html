@@ -1,50 +1,279 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>whatsapp</title>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="css/font-awesome.css">
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.js">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	
+	<style>
+	/**{
+	outline:1px solid rgba(255,0,0,0.3);}*/
+		.cont_tamano{
+			height: 350px;
+			overflow: scroll;
+		}
+		/*.srilo_lt{
+			color:#233F5F;
+			font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+		}*//*
+		#fondo
+		{
+			background: url("https://scontent-grt2-1.xx.fbcdn.net/v/t1.0-9/13240076_1066962823342607_1870583144777676715_n.jpg?oh=fc73b5c7ac43ab69fcf07dabfa7c3f56&oe=57E4331D");
+			background-size: cover;
+		}*/
+		#bienvenida
+		{
+			border: 1px solid #708E89;
+			margin: 10px;
+		}
+		#chat
+		{
+			margin: 10px;
+			border: 1px solid #708E89;
+			display: none;
+		}
+		.arriba{
+			background-color:#E8E9EB;
+		}
+		.abajo{
+			background-color:#fff;
+			-moz-box-shadow: 0px 5px 7px #121a17;
+			-webkit-box-shadow: 0px 5px 7px #121a17;
+			box-shadow: 0px 5px 7px #121a17;
+			}
+		.foto{
+			border-radius: 100%;
+			max-width: 178%;
+			padding: 6% 0%;
+			}
+		.mg0{
+			margin: 0%;
+			}
+		.mg2{
+			padding:2%;
+			}
+		.well{
+			padding: 7px;
+			background-color: #E8E9EB;
+			}
+		.btnp{
+			margin-top: 2.5%;
+		}
+		.icono1{
+			padding: 15px 1px;
+				}
+		.list_mens{
+			background-color: #fff;
+			overflow: scroll;
+			padding-top: 3%;
+			height: 468px;
+			}
+		#lista_mensajes{
+			padding:2%;
+		}
+		#buscar{
+			width: 95%;
+			border:none;
+			}
+		.border_buscar{
+			border:1px solid #B2B2B2;
+			}
+		.foto_chat{
+			background:url("../images/chat-panel-bg.png");
+			}/*
+		.border_media{
+			border-left:1px solid #000;
+			}*/
+		.icono1, .glyphicon{
+			color: #4F7EAD;
+			}
+		.label-danger{
+			font-size: 16px;
+			font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+			color:#F19726;
+			background-color: transparent;
+		}
+		.list-group{
+			width: 47%;
+		}
+		@media(max-width:991px){
+			.foto2{
+				max-width: 60px;
+			}
+			.border_buscar{
+				margin-left: 2%;
+			}
+			.border_media{
+				border-bottom:1px solid #B2B2B2;
+				text-align: center;
+			}
+		}
+	</style>
 </head>
 <body>
-<div id="Bienvenida">
-	<h3>Hola, por favor ingresa tu nombre para entrar al chat</h3>
-	<input type="text" id="nombre">
-	<button onclick="guardarNombre()">Entrar</button>
-</div>
-<div id="chat">
-<h1>Bienvenida a mi super chat</h1>
-<input type="text" id="mensaje" class="form-control">
-<button onclick="enviarMensaje()">Enviar Mensaje</button>
-<button onclick="limpiarMensajes()">Limpiar Mensajes</button>
-<ul id="lista_mensajes"></ul>
-</div>
-<script>
-	var socket = io("/");
-	var nombre;
+	<div id="fondo">
+		<div class="container mg2">
 
-	function guardarNombre()
-	{
-		nombre = $("#nombre").val();
-		$("#Bienvenida").hide();
-		$("#chat").show();
-	}
+			<div class="row arriba ">
+				<div class="col-md-4 ">
+					<div class="row ">
+						<div class="col-md-2 mg0"><img class="foto foto2"src="https://scontent-grt2-1.xx.fbcdn.net/v/t1.0-9/10155273_1411758652458537_2448439624206117901_n.jpg?oh=3403774a20f0160d5b4a3bb831ed5a9a&oe=579C91E2"></div>
+						<div class="col-md-8 text-center"></div>
+						<div class="col-md-2">
+						<i class=" icono1 pull-right glyphicon glyphicon-option-vertical"></i>
+						<i class="icono1 pull-right glyphicon glyphicon-comment"></i>
+						 </div>
+					</div>
+				</div>
+				<div class="col-md-8 border_media">
+					<div class="row ">
+						<div class="col-md-2 "><img class="foto"src="https://d262ilb51hltx0.cloudfront.net/fit/c/60/60/1*zksGmHsUGSEqbtzrQMuhVA.png"></div>
+						<div class="col-md-8 "><p class="mg0 srilo_lt"><strong>Laboratoria Arequipa-Perú</strong></p>
+						<p class="srilo_lt"><strong>Paola Begazo</strong></p>
+						<p id="ultimo_mj" class="srilo_lt text-center"></p>
+						</div>
+						<div class="col-md-2">
+						<i class="icono1 pull-right glyphicon glyphicon-option-vertical"></i>
+						<i class=" icono1 pull-right glyphicon glyphicon-paperclip"></i>
+						 </div>
+					</div>	
+				</div>	
+			</div>
+			<div class="row abajo ">
+				<div class="col-md-4">
+					<div class="row ">
+						<div class="border_buscar">
+							<i class="glyphicon glyphicon-zoom-in"></i>
+							<input type="text" id="buscar" class="buscador srilo_lt" placeholder="Buscar o empezar un nuevo Chat" >
+							</input>
+						</div>
+						<div class="list_mens foto_chat text-center">
+							<ul id="nombres" class="list-group srilo_lt">
+								
+							</ul>
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-8">
+						<div class="row foto_chat ">
+							<div class=" cont_tamano">
+								<ul id="lista_mensajes" class="list-group srilo_lt"></ul>
+							</div>			
+							<div id="bienvenida" class="well ">
+								<h5 class="srilo_lt " style="font-size:15px;">REGISTRATE! PARA EMPEZAR!</h5>
+								<input type="text" id="nombre" class="form-control">
+								<button class="btn" onclick="guardarNombre()">Entrar</button>
+							</div>
+							<div id="chat" class="well ">
+								<input srilo_lt type="text" id="mensaje" class="form-control srilo_lt ">
+								<button class="btnp srilo_lt" onclick="enviarMensaje()">Enviar mensaje</button>
+								<button class="btnp srilo_lt" onclick="limpiarMensajes()">Limpiar mensajes</button>
+								<div  class="fb-like pull-left btnp"
+								  data-share="true"
+								  data-width="450"
+								  data-show-faces="true">
+								</div>
+								<p>
+									<small class="srilo_lt" style="font-size:11px;">Chat creado por Patricia Mendoza Soncco</small>
+								</p>
+								
+							</div>
+						</div>	
+				</div>
+			</div>
+		</div>
+	</div>
 
-	function enviarMensaje()
-	{
-		
-	}
-	function limpiarMensajes()
-	{
-		$("#lista_mensajes").html("");
-	}
-
-	socket.on("nuevo_mensaje", function (_msg)
-	{
-		$("#lista_mensajes").append("<li class="list-group-item">" + _msg + "</li>");
-	});
-
+	<script>//codigo para saber cuantas personas entran a mi pagina a traves de google
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78171375-1', 'auto');
+  ga('send', 'pageview');
 </script>
+	<script> //codigo del face
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1724034374550565',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+	
+	
+	<script>
+		var socket = io('/');
+		var nombre;
+		var listUsers = new Array();
+		var x=0;
+		var i=0;
+		var o=0;
+		function guardarNombre()
+		{
+			nombre = $('#nombre').val();
+			$('#bienvenida').hide();
+			$('#chat').show();
+		}
+		function enviarMensaje()
+		{
+			socket.emit('chat', "<span class='label label-danger'>" +  nombre + "</span> : " + $('#mensaje').val()  );
+			$('#mensaje').val('');
+			$('#mensaje').focus();
+		}
+		function limpiarMensajes()
+		{
+			$('#lista_mensajes').html('');
+		}
+		function checkUser(_name)
+		{
+			var check = false;
+			for(var i=0 in listUsers)
+			{
+				if(_name == listUsers[i])
+				 	check = true;
+			}
+			
+			return check;
+		}
+		socket.on('nuevo_mensaje', function (_msg)
+		{
+			$('#lista_mensajes').append('<li class="list-group-item">' + _msg + '</li>');
+			var indexEnd = _msg.indexOf('</span>');
+			var indexStart = 33;
+			
+			var nombre = _msg.substring(indexStart, indexEnd);
+			
+			if(!checkUser(nombre))
+			{
+				 
+				$('#nombres').append('<li class="list-group-item">' + nombre + '</li>');
+				listUsers.push(nombre);
+			}
+			
+			$('#ultimo_mj').html('');
+			$('#ultimo_mj').append('<p>' + _msg + '</p>');
+			
+		});
+		
+	</script>
 
 </body>
 </html>
