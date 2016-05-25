@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	
+
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 </head>
@@ -87,25 +87,29 @@
 	<script>
 		var socket = io('/');
 		var nombre;
+
 		function guardarNombre()
 		{
-			nombre = $('#nombre').val();
-			$('#bienvenida').hide();
-			$('#chat').show();
+			nombre = $("#nombre").val();
+			$("#bienvenida").hide();
+			$("#chat").show();
 		}
+
 		function enviarMensaje()
 		{
-			socket.emit('chat', "<span class='label label-danger'>" +  nombre + "</span> : " + $('#mensaje').val()  );
-			$('#mensaje').val('');
-			$('#mensaje').focus();
+			socket.emit("chat", "<span class='label label-danger'>" +  nombre + "</span> : " + $("#mensaje").val()  );
+			$("#mensaje").val("");
+			$("#mensaje").focus();
 		}
+
 		function limpiarMensajes()
 		{
-			$('#lista_mensajes').html('');
+			$("#lista_mensajes").html("");
 		}
-		socket.on('nuevo_mensaje', function (_msg)
+
+		socket.on("nuevo_mensaje", function (_msg)
 		{
-			$('#lista_mensajes').append('<li class="list-group-item">' + _msg + '</li>');
+			$("#lista_mensajes").append('<li class="list-group-item">' + _msg + '</li>');
 		});
 	</script>
 </body>

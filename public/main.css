@@ -1,0 +1,63 @@
+.fondo{
+	background-color: #DFDFDF;
+}
+.fondo2{
+	background-color: #009688;
+	padding-top: 120px;/*
+	position: relative;*/
+}
+.container{
+	margin-top: -100px;
+	-webkit-box-shadow: 4px 6px 26px -5px rgba(138,131,138,1);
+    -moz-box-shadow: 4px 6px 26px -5px rgba(138,131,138,1);
+	box-shadow: 4px 6px 26px -5px rgba(138,131,138,1);
+}
+.header{
+	background-color: #CECECC;
+}
+.header img{
+	border-radius: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.header i{
+	padding-top: 15px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+}
+.separacion{
+	border-right:1px solid #E0E0E0;
+}
+.contactos{
+	background-color: #fff;
+	padding-right: 0;
+	padding-left: 0;
+}
+.buscar{
+	padding:5px;	
+	border:1px solid #E0E0E0;
+	margin:7px 19px;
+	border-radius: 5px;
+}
+.buscar i{
+	color: #E0E0E0;
+	padding-right: 3px;
+}
+.buscar input{
+	width: 95%;
+	border:none;
+}
+.lista-contact{
+	overflow: scroll;
+	height: 468px;
+}
+.chat{
+	background: url("images/chat.png");
+	background-size: cover;
+	background-color: #EDE9E4;
+}
+.chat-content{
+	overflow: scroll;	
+	height: 100px;
+}
+
