@@ -1,8 +1,9 @@
+*{outline:1px solid rgba(255,0,0,1);}
 .fondo{
-	background-color: #DFDFDF;
+	background-color: #F9F655;
 }
 .fondo2{
-	background-color: #009688;
+	background: #A0D332;
 	padding-top: 120px;/*
 	position: relative;*/
 }
@@ -56,8 +57,12 @@
 	background-size: cover;
 	background-color: #EDE9E4;
 }
+
 .chat-content{
 	overflow: scroll;	
-	height: 100px;
+	height: 359px;
+}
+#chat{
+	display: none;
 }
 
