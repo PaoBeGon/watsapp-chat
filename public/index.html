@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
@@ -21,8 +22,8 @@
 	<div class="row header">
 		<div class="col-md-5 separacion">
 			<img src="images/yo.jpg" width="35px">			
-			<i class=" icono1 pull-right glyphicon glyphicon-option-vertical"></i>
-			<i class="icono1 pull-right glyphicon glyphicon-comment"></i>
+			<i class=" icono1 pull-right glyphicon glyphicon-option-vertical"></i>			
+			<button class="pull-right" onclick="enviarMensaje()"><i class="icono1 glyphicon glyphicon-comment"></i></button>
 		</div>
 		<div class="col-md-7">
 			<i class="icono1 pull-right glyphicon glyphicon-option-vertical"></i>
@@ -46,7 +47,7 @@
 				<ul id="lista_mensajes" class="list-group srilo_lt"></ul>
 			</div>
 			<div id="bienvenida" class="well">
-		<h3>REGISTRATE YA!</h3>
+		<h3>REGÍSTRATE YA!</h3>
 		<input type="text" id="nombre" class="form-control">
 		<button onclick="guardarNombre()">Entrar</button>
 		<div
