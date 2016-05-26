@@ -3,10 +3,12 @@
 	font-family: 'Indie Flower', cursive;
 }
 .fondo{
-	background-color: #F9F655;
+	
+	background-image: url("images/fond.jpg");
+	/*background-color: #F9F655*/;
 }
-.fondo2{
-	background: #A0D332;
+.fondo2{/*
+	background: #A0D332;*/
 	padding-top: 120px;/*
 	position: relative;*/
 }
