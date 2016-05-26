@@ -23,7 +23,12 @@
 		<div class="col-md-5 separacion">
 			<img src="images/yo.jpg" width="35px">			
 			<i class=" icono1 pull-right glyphicon glyphicon-option-vertical"></i>			
-			<button class="pull-right" onclick="enviarMensaje()"><i class="icono1 glyphicon glyphicon-comment"></i></button>
+			<button class="pull-right" onclick="enviarMensajea()"><i class="icono1 glyphicon glyphicon-comment"></i></button>
+		<!-- 		<div id="enviara" class="well">
+					<h3>MENSAJE</h3>
+					<input type="text" id="mensaj" class="form-control">
+					<button class="pull-right" onclick="enviarMensajea()"><i class="icono1 glyphicon glyphicon-comment"></i></button>
+				</div> -->
 		</div>
 		<div class="col-md-7">
 			<i class="icono1 pull-right glyphicon glyphicon-option-vertical"></i>
@@ -90,6 +95,8 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 	<script>
+	alert("BIENVENIDO A TALK-ME")
+
 		var socket = io('/');
 		var nombre;
 		function guardarNombre()
