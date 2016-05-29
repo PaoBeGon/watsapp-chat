@@ -33,6 +33,10 @@
 	padding-bottom: 15px;	
 	color: #E0E0E0;
 }
+.texto {
+	color: #fff;
+	padding-top: 5px;
+}
 .separacion{
 	border-right:1px solid #E0E0E0;
 }
@@ -62,7 +66,22 @@
 }
 .lista-contact{
 	overflow: scroll;
-	height: 488px;
+	height: 488px;	
+}
+.lista-contact img{
+	width: 35px;	
+	border-radius: 100%;
+	margin: 10px;
+}
+.lista-contact li{	
+	border-top: 1px solid #E0E0E0;
+}
+.lista-contact li p{
+	padding-top: 20px;
+	margin-right: 10px;
+}
+.ultimo{
+	border-bottom: 1px solid #E0E0E0;
 }
 .chat{
 	background: url("images/chat.png");

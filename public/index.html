@@ -24,13 +24,14 @@
 			<img src="images/yo.jpg" width="35px">			
 			<i class=" icono1 pull-right glyphicon glyphicon-option-vertical"></i>			
 			<button class="pull-right" onclick="enviarMensajea()"><i class="icono1 glyphicon glyphicon-comment"></i></button>
-		<!-- 		<div id="enviara" class="well">
-					<h3>MENSAJE</h3>
-					<input type="text" id="mensaj" class="form-control">
-					<button class="pull-right" onclick="enviarMensajea()"><i class="icono1 glyphicon glyphicon-comment"></i></button>
-				</div> -->
 		</div>
-		<div class="col-md-7">
+		<div class="col-md-1">	
+			<img src="images/logocodeacademy.png" width="35px">
+		</div>
+		<div class="col-md-4 texto">
+			<strong>Laboratoria Perú</strong><br>Ana Maria, Aldo, Gian, Mariana, Papu, Tu
+		</div>
+		<div class="col-md-2 iconos">
 			<i class="icono1 pull-right glyphicon glyphicon-option-vertical"></i>
 			<i class=" icono1 pull-right glyphicon glyphicon-paperclip"></i>
 		</div>
@@ -43,7 +44,18 @@
 				</input>
 			</div>			 
 			<div class="lista-contact">
-				<ul id="nombres" class="list-group srilo_lt"></ul>
+				<ul id="nombres" class="list-group srilo_lt">
+					<li><img src="images/logocodeacademy.png" width="25px"><strong>Laboratoria Perú</strong><p class="pull-right">14:25</p></li>
+					<li><img src="images/raymi.jpg"><strong>Raymi Saldomando</strong><p class="pull-right">11:25</p></li>				
+					<li><img src="images/yo.jpg"><strong>Paola Begazo Gonzales</strong><p class="pull-right">10:30</p></li>
+					<li><img src="images/mariana.jpg"><strong>Mariana Costa</strong><p class="pull-right">09:25</p></li>
+					<li><img src="images/anamaria.jpg"><strong>Ana María Martinez Franklin</strong><p class="pull-right">Ayer</p></li>
+					<li><img src="images/rodulfo.jpg"><strong>Rodulfo Prieto</strong><p class="pull-right">Martes</p></li>
+					<li><img src="images/andrea.jpg"><strong>Andrea Lamas</strong><p class="pull-right">Lunes</p></li>
+					<li><img src="images/mariapaula.jpg"><strong>Maria Paula Rivarola</strong><p class="pull-right">13/01/2016</p></li>
+					<li><img src="images/katy.jpg"><strong>Katy Sanchez</strong><p class="pull-right">11/01/2016</p></li>
+					<li class="ultimo"><img src="images/aldo.jpg"><strong>Aldo Alfaro</strong><p class="pull-right">03/01/2016</p></li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-md-7 chat">
@@ -95,7 +107,12 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 	<script>
-	alert("BIENVENIDO A TALK-ME")
+	// var meses=["enero", "febrero", "marzo"]
+	// alert(meses[0]);
+	// alert(meses[1]);
+	// alert(meses[2]);
+	// var mensaje="Hola Mundo! \n Qué facil es incluir \'comillas simples\' \n y \"comillas dobles\" ";
+	// alert(mensaje)
 
 		var socket = io('/');
 		var nombre;
